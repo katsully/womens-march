@@ -18,76 +18,73 @@
 
   </head>
   <body>
+  	<!-- 	<div class="jumbotron vertical-center" id="maintitle">
+	  		<div class="col-md-10 col-md-offset-1 center">
+	  			<img src="sitetitle.png" alt="header" style="width:100%">
+	  		</div>
+  		</div> -->
+  		
   		<div class="container">
 
   		<div class="jumbotron vertical-center" id="maintitle">
 	  		<div class="col-md-10 col-md-offset-1 center">
 	  			<img src="sitetitle.png" alt="header" style="width:100%">
-
 	  		</div>
   		</div>
 
-			
+		<div class="row" >
+	    	<div class="col-md-4 col-md-offset-1" id="submit">
+					<h3>Want to add your own video? </h3>
+					<h4>Follow these steps</h4>
+					<br>
 
+					<ol>
+						<li>Create a Facebook Live Video</li>
+						<li>Make it Public</li>
+						<li>On your home page, find your video</li>
+						<li>Click the arrow in the upper right hand corner</li>
+						<li>Click embed</li>
+						<li>Copy and paste the iframe into the box below!</li>
+					</ol>
 
-		<div class="row" id="instructions">
-	    		<div class="col-md-6 col-md-offset-3" >
-					<h3>Want to add your own video? Follow these steps</h3>
-
-				<ol>
-					<li>Create a Facebook Live Video</li>
-					<li>Make it Public</li>
-					<li>On your home page, find your video, click the arrow in the upper right hand corner</li>
-					<li>Click embed</li>
-					<li>Copy and paste the iframe into the box below!</li>
-				</ol>
+					<br>
+					<p>Your Video: </p>
+		  			<input type="text" id="fb_vid" name="fname" style="width:90%">
+		  			<br>
+		  			<p>Your city: </p>
+		  			<input type="text" id="city" style="width:90%">
+		  			<br>
+					<input class = "button" type="submit" value="Submit" style="width:60%" onclick="test()">			
 			</div>
 
-		
-		<!-- </div> -->
+	    	<div class="col-md-7" id="allvideos">
 
-		<!-- <div class="row"> -->
-	    		<div class="col-md-6 col-md-offset-3">
-		
-			<div class="col-md-3 "><p>Your Video: </p></div>
-		  <div class="col-md-7 "><input type="text" id="fb_vid" name="fname" style="width:100%"><br></div>
-		  <div class="col-md-3 "><p>Your city: </p></div>
-		  <div class="col-md-7"><input type="text" id="city" style="width:100%"<br></div>
-		  <div class="col-md-2 "><input type="submit" value="Submit" style="width:100%" onclick="test()"></div>
-		
-		</div>
-		</div>
+				<script type="text/javascript">
+					function test()
+					{
+			   			var city = document.getElementById("city").value;
+			   			var p = document.createElement('p');
+			   			p.innerHTML = city;
+			   			// document.body.appendChild(p);
 
-		<div class="row">
-	  <!--   	<div class="col-md-6 centered" id="videoholder">
-				<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FBuzzFeed%2Fvideos%2F10155633414570329%2F&show_text=0&width=100" width="100%" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+			   			var v = document.getElementById("fb_vid").value;
+			   			var div = document.createElement('div');
+			   			div.innerHTML = v;
+			   			div.id= "videoholder";
+			   			div.classList.add("col-md-7"); 
+			   			// div.classList.add("col-md-offset-1"); 
+			   			var element = div.firstChild;
+			   			// element.id = "videoholder";
+			   			// element.class = "col-md-6 centered"; 
+			   			var videodiv = document.getElementById("allvideos");
+			   			videodiv.appendChild(p);
+			   			videodiv.appendChild(div);
+
+					}
+				</script>
+
 			</div>
-			<div class="col-md-6 centered" id="videoholder">
-				<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FBuzzFeed%2Fvideos%2F10155633414570329%2F&show_text=0&width=560" width="100%"height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-			</div> -->
-
-			<script type="text/javascript">
-		function test()
-		{
-   			var city = document.getElementById("city").value;
-   			var p = document.createElement('p');
-   			p.innerHTML = city;
-   			document.body.appendChild(p);
-
-   			var v = document.getElementById("fb_vid").value;
-   			var div = document.createElement('div');
-   			div.innerHTML = v;
-   			// div.id= "videoholder";
-   			// div.class= "col-md-6 centered"; 
-   			var element = div.firstChild;
-   			element.id = "videoholder";
-   			element.class = "col-md-6 centered"; 
-   			document.body.appendChild(div);
-
-		}
-		</script>
-		</div>
-
 	</div>
+
 
 </body>
