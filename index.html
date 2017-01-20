@@ -43,6 +43,7 @@
 				</ol>
 			</div>
 
+		<p hidden id="submitted">Submitted!</p>
 		
 		<!-- </div> -->
 
@@ -69,6 +70,9 @@
 			<script type="text/javascript">
 		function test()
 		{
+			var submitText = document.getElementById("submitted");
+			submitText.hidden = false;
+
    			var city = document.getElementById("city").value;
    			var p = document.createElement('p');
    			p.innerHTML = city;
