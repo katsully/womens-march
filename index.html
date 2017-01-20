@@ -51,6 +51,8 @@
 		
 			<div class="col-md-3 "><p>Your Video: </p></div>
 		  <div class="col-md-7 "><input type="text" id="fb_vid" name="fname" style="width:100%"><br></div>
+		  <div class="col-md-3 "><p>Your city: </p></div>
+		  <div class="col-md-7"><input type="text" id="city" style="width:100%"<br></div>
 		  <div class="col-md-2 "><input type="submit" value="Submit" style="width:100%" onclick="test()"></div>
 		
 		</div>
@@ -67,6 +69,11 @@
 			<script type="text/javascript">
 		function test()
 		{
+   			var city = document.getElementById("city").value;
+   			var p = document.createElement('p');
+   			p.innerHTML = city;
+   			document.body.appendChild(p);
+
    			var v = document.getElementById("fb_vid").value;
    			var div = document.createElement('div');
    			div.innerHTML = v;
@@ -75,7 +82,8 @@
    			var element = div.firstChild;
    			element.id = "videoholder";
    			element.class = "col-md-6 centered"; 
-   			document.body.appendChild(element);
+   			document.body.appendChild(div);
+
 		}
 		</script>
 		</div>
