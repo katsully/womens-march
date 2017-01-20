@@ -60,30 +60,40 @@
 	    	<div class="col-md-7" id="allvideos">
 
 				<script type="text/javascript">
-					function test()
-					{
+					function test(){
+						var submitText = document.getElementById("submitted");
+						submitText.hidden = false;
+
 			   			var city = document.getElementById("city").value;
 			   			var p = document.createElement('p');
 			   			p.innerHTML = city;
-			   			// document.body.appendChild(p);
+			   			document.body.appendChild(p);
 
 			   			var v = document.getElementById("fb_vid").value;
 			   			var div = document.createElement('div');
 			   			div.innerHTML = v;
-			   			div.id= "videoholder";
-			   			div.classList.add("col-md-7"); 
-			   			// div.classList.add("col-md-offset-1"); 
+			   			// div.id= "videoholder";
+			   			// div.class= "col-md-6 centered"; 
 			   			var element = div.firstChild;
-			   			// element.id = "videoholder";
-			   			// element.class = "col-md-6 centered"; 
-			   			var videodiv = document.getElementById("allvideos");
+			   			element.id = "videoholder";
+			   			element.class = "col-md-6 centered"; 
+			   			// document.body.appendChild(div);
+						var videodiv = document.getElementById("allvideos");
 			   			videodiv.appendChild(p);
 			   			videodiv.appendChild(div);
 
-					}
-				</script>
+   			// clear out text fields
+   			document.getElementById('fb_vid').value = '';
+   			document.getElementById('city').value = '';
+		}
+		</script>
+		</div>
 
-			</div>
+		<p hidden id="submitted">Submitted!</p>
+		
+		</div>
+
+
 	</div>
 
 
